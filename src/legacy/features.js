@@ -524,6 +524,18 @@ App.pageTitle = function (active, role) {
     referrals: t("nearbyHospitals"),
     hospital: "Hospital settings",
   };
+  if (role === "patient") {
+    Object.assign(map, {
+      dashboard: t("dashboard"),
+      doctors: t("findDoctor"),
+      appointments: t("myAppointments"),
+      records: t("records"),
+      prescriptions: t("medicines"),
+      bills: t("bills"),
+      profile: t("profile"),
+      book: t("bookAppointment"),
+    });
+  }
   return map[active] || basePageTitle.call(this, active, role);
 };
 
